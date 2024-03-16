@@ -97,10 +97,10 @@ Module.register("MMM-aviationwx", {
 
       // Pull out variables for display
       var airport = this.wxdata[airportKey];
-      var icao = airport.id;
-      var iata = airport.id.substr(1);
-      var name = airport.site;
-      var fltcat = airport.fltcat;
+      var icao = airport.icaoId;
+      var iata = airport.icaoId.substr(1);
+      var name = airport.name;
+    //  var fltcat = airport.fltcat;  // Exists in the GeoJson file but not the Json var= fltcat
       var temp = parseInt(airport.temp);
       var dewpoint = parseInt(airport.dewp);
       var winddir = this.padZeroes(airport.wdir, 3);
