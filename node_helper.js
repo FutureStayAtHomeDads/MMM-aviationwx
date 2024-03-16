@@ -6,9 +6,7 @@
  */
 
 const NodeHelper = require("node_helper");
-const request = require("request");
 const convert = require('xml2json')
-const concat = require('concat-stream');
 
 const test_data= '<AIRPORT_STATUS_INFORMATION><Update_Time>Tue Mar 12 16: 29: 59 2024 GMT</Update_Time><Dtd_File>http://www.fly.faa.gov/AirportStatus.dtd</Dtd_File><Delay_type><Name>Ground Delay Programs</Name><Ground_Delay_List><Ground_Delay><ARPT>SFO</ARPT><Reason>runway construction</Reason><Avg>25 minutes</Avg><Max>1 hour and 26 minutes</Max></Ground_Delay><Ground_Delay><ARPT>LAS</ARPT><Reason>wind</Reason><Avg>56 minutes</Avg><Max>2 hours and 7 minutes</Max></Ground_Delay></Ground_Delay_List></Delay_type><Delay_type><Name>General Arrival/Departure Delay Info</Name><Arrival_Departure_Delay_List><Delay><ARPT>PHX</ARPT><Reason>VOL:Multi-taxi</Reason><Arrival_Departure Type="Departure"><Min>16 minutes</Min><Max>30 minutes</Max><Trend>Increasing</Trend></Arrival_Departure></Delay><Delay><ARPT>SFO</ARPT><Reason>WX:Wind</Reason><Arrival_Departure Type="Departure"><Min>16 minutes</Min><Max>30 minutes</Max><Trend>Increasing</Trend></Arrival_Departure></Delay></Arrival_Departure_Delay_List></Delay_type><Delay_type><Name>Airport Closures</Name><Airport_Closure_List><Airport><ARPT>LAS</ARPT><Reason>!LAS 12/067 LAS AD AP CLSD TO NON SKED TRANSIENT GA ACFT EXC PPR 702-261-7775 2312132300-2403132300</Reason><Start>Dec 13 at 18:00 UTC.</Start><Reopen>Mar 13 at 19:00 UTC.</Reopen></Airport></Airport_Closure_List></Delay_type></AIRPORT_STATUS_INFORMATION>'
 const checktype = { "Airspace_Flow_List": "Airspace_Flow", "Ground_Delay_List": "Ground_Delay", "Arrival_Departure_Delay_List": "Delay", "Airport_Closure_List": "Airport", "Ground_Stop_List":"Program" }

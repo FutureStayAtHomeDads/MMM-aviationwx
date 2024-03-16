@@ -5,14 +5,12 @@
   "main": "MMM-aviationwx.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall":"./postinstall"
+    "postinstall": "./postinstall"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concat-stream": "^2.0.0",
-    "request": "^2.88.2",
     "xml2json": "^0.12.0"
   }
 }
