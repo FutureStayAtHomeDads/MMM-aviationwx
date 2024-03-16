@@ -60,6 +60,7 @@ module.exports = NodeHelper.create({
               if (this.debug)
                 console.log("METAR data found for " + airport);
               airportData[airport] = metar;
+              airportData[airport]['FAA'] = {}
               return; // check next airport in list
             }
           });
@@ -124,7 +125,7 @@ module.exports = NodeHelper.create({
           t[keyname][checktype[keyname]].forEach(airport_record => {
             // if the airport is one the user requested
             if (airports.includes('K' + airport_record.ARPT)) {
-              if (airportData['K' + airport_record.ARPT]['FAA'] == undefined)
+              if (airportData['K' + airport_record.ARPT].FAA === undefined)
                 airportData['K' + airport_record.ARPT]['FAA'] = {}
               // save this data record
               airportData['K' + airport_record.ARPT]['FAA'][key] = airport_record
